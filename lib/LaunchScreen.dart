@@ -2,6 +2,8 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:card_swiper/card_swiper.dart';
+import 'package:travel_booking_ui_1127/HomeScreen.dart';
+import 'package:travel_booking_ui_1127/SplashScreen.dart';
 import 'destination.dart';
 
 class screen2 extends StatelessWidget {
@@ -23,13 +25,22 @@ class screen2 extends StatelessWidget {
           body: Column(
             children: [
               Container(
-                height: 400.0,
-                decoration: BoxDecoration(
-                    // color: Colors.grey,
-                    image: DecorationImage(
-                        image: AssetImage("assets/images/Capture.PNG"),
-                        fit: BoxFit.fill)),
-              ),
+                  height: 400.0,
+                  decoration: BoxDecoration(
+                      
+                      image: DecorationImage(
+                          image: AssetImage("assets/images/Capture.PNG"),
+                          fit: BoxFit.fill)),
+                  child: SizedBox(
+                    child: GestureDetector(
+                      onTap: () {
+                        Navigator.pop(
+                          context,
+                          MaterialPageRoute(builder: (context) => HomeScreen()),
+                        );
+                      },
+                    ),
+                  )),
               Container(
                 child: SizedBox(
                   height: 100,
@@ -61,44 +72,6 @@ class screen2 extends StatelessWidget {
                   ),
                 ),
               ),
-              // Container(
-              //   child: SizedBox(
-              //     height: 150,
-              //     child:
-              //          Swiper(
-              //           itemCount: imageList.length,
-              //           scale: 0.8,
-              //           control: SwiperControl(),
-              //           itemHeight: 250,
-              //           viewportFraction: 0.7,
-              //           itemBuilder: (BuildContext context, int index) {
-              //             return ClipRRect(
-              //               borderRadius: BorderRadius.circular(8.0),
-              //               child: Stack(
-              //                 fit: StackFit.expand,
-              //                 children: <Widget>[
-              //                   Image.network(
-              //                     imageList[index],
-              //                     width: 1050,
-              //                     height: 250,
-              //                     fit: BoxFit.cover,
-              //                   ),
-              //                   Padding(
-              //                     padding: const EdgeInsets.only(top: .0),
-              //                     child: ElevatedButton(onPressed: (){}, child: Text(
-              //                       topLocation[index]['title'].toString(),
-              //                       style: TextStyle(
-              //                           fontSize: 20.0,
-              //                           fontWeight: FontWeight.bold),
-              //                     ),
-              //                   ),
-              //                   ),
-              //                 ],
-              //               ),
-              //             );
-              //           }),
-              //     ),
-              //   ),
               Container(
                   height: 100,
                   child: ListView(
@@ -132,27 +105,97 @@ class screen2 extends StatelessWidget {
                       )
                     ],
                   )),
-              SizedBox(
-                width: 150.0,
-                child: ElevatedButton(
-                  onPressed: null,
-                  child: Text(
-                    " Snorking 3.7K",
-                    style: TextStyle(
-                      color: Colors.white,
-                    ),
-                  ),
-                  style: ElevatedButton.styleFrom(
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(20.0)),
-                    primary: Color(0xFF23A892),
-                  ),
-                ),
-              ),
               Container(
-                height: 100.0,
-                
-              )
+                  height: 35,
+                  child: ListView(
+                    scrollDirection: Axis.horizontal,
+                    children: <Widget>[
+                      Padding(
+                        padding: const EdgeInsets.only(left: 110.0),
+                        child: ElevatedButton(
+                          onPressed: () {},
+                          child: Text(
+                            " Snorking 3.7K",
+                            style: TextStyle(
+                              color: Colors.white,
+                            ),
+                          ),
+                          style: ElevatedButton.styleFrom(
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(20.0)),
+                            primary: Color(0xFF23A892),
+                          ),
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(left: 120.0),
+                        child: ElevatedButton(
+                          onPressed: () {},
+                          child: Text(
+                            " Climbing 2.1K",
+                            style: TextStyle(
+                              color: Colors.white,
+                            ),
+                          ),
+                          style: ElevatedButton.styleFrom(
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(20.0)),
+                            primary: Color(0xFF23A892),
+                          ),
+                        ),
+                      )
+                    ],
+                  )),
+
+              Container(
+                  height: 100.0,
+                  child: SizedBox(
+                    child: GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => Screen3()),
+                        );
+                      },
+                      child: Card(
+                        child: Container(
+                          alignment: Alignment.centerLeft,
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              const Icon(
+                                Icons.remove_rounded,
+                                size: 40,
+                                color: Colors.grey,
+                              ),
+                              Expanded(
+                                  flex: 5,
+                                  child: ListTile(
+                                    title: Row(
+                                      children: [
+                                        Text(
+                                          "Odessa - Bali",
+                                          style: TextStyle(
+                                              fontWeight: FontWeight.bold,
+                                              fontSize: 25.0),
+                                        ),
+                                        Spacer(),
+                                        Text(
+                                          "\$987",
+                                          style: TextStyle(
+                                              fontWeight: FontWeight.bold,
+                                              fontSize: 25.0),
+                                        )
+                                      ],
+                                    ),
+                                    subtitle: Text("02.55 - 19.55"),
+                                  )),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                  ))
             ],
           ),
         ),

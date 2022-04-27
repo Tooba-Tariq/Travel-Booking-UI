@@ -2,7 +2,6 @@ import 'dart:ui';
 import 'package:card_swiper/card_swiper.dart';
 import 'package:flutter/material.dart';
 import 'package:travel_booking_ui_1127/LaunchScreen.dart';
-import 'slidder.dart';
 import 'destination.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -44,7 +43,7 @@ class HomeScreen extends StatelessWidget {
           body: Column(
             children: [
               Container(
-                height: 120,
+                height: 100,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
@@ -60,7 +59,7 @@ class HomeScreen extends StatelessWidget {
                           indicatorSize: TabBarIndicatorSize.tab,
                           indicator: UnderlineTabIndicator(
                               borderSide: BorderSide(width: 4.0),
-                              insets: EdgeInsets.symmetric(horizontal: 50.0)),
+                              insets: EdgeInsets.symmetric(horizontal: 45.0)),
                           indicatorColor: Color(0xFF23A892),
                           automaticIndicatorColorAdjustment: true,
                           tabs: [
@@ -85,30 +84,6 @@ class HomeScreen extends StatelessWidget {
                 child: SizedBox(
                   height: 260,
                   child:
-                      // ListView.builder(
-                      //     itemCount: imageList.length,
-                      //     scrollDirection: Axis.horizontal,
-                      //     physics: BouncingScrollPhysics(),
-                      //     itemBuilder: (BuildContext context, int index) {
-                      //       return ClipRRect(
-                      //         borderRadius: BorderRadius.circular(8.0),
-                      //         child: Stack(
-                      //           fit: StackFit.expand,
-                      //           children: <Widget>[
-                      //             Image.network(
-                      //               imageList[index],
-                      //               width: 1050,
-                      //               height: 250,
-                      //               fit: BoxFit.cover,
-                      //             ),
-                      //             Padding(
-                      //               padding: const EdgeInsets.only(top: 25.0),
-                      //               child: Text(""),
-                      //             ),
-                      //           ],
-                      //         ),
-                      //       );
-                      //     })
                       GestureDetector(
                         onTap: () {
                           
@@ -286,24 +261,6 @@ class HomeScreen extends StatelessWidget {
             
           ),
           
-          // bottomNavigationBar: BottomNavigationBar(
-          //   type: BottomNavigationBarType.fixed,
-          //   backgroundColor: const Color.fromARGB(255, 32, 150, 130),
-          //   selectedItemColor: const Color(0xFFFFFFFF),
-          //   unselectedItemColor: const Color(0xFF91D3C8),
-          //   selectedFontSize: 18.0,
-          //   unselectedFontSize: 15.0,
-          //   items: [
-          //     const BottomNavigationBarItem(
-          //         icon: Icon(Icons.home), label: "Home"),
-          //     const BottomNavigationBarItem(
-          //         icon: Icon(Icons.settings), label: "Settings"),
-          //     const BottomNavigationBarItem(
-          //         icon: Icon(Icons.star), label: "Favourites"),
-          //     const BottomNavigationBarItem(
-          //         icon: Icon(Icons.contacts), label: "Contacts")
-          //   ],
-          // ),
         ),
       ),
       
